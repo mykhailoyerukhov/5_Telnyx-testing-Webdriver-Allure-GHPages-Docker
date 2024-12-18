@@ -57,7 +57,10 @@ export const config: WebdriverIO.Config = {
         process.argv.includes('--browser-name=chrome') ? 'chrome' : 'chrome',
         'goog:chromeOptions': {
       args: [
-        '--window-size=1900,1080' // указываем размер окна
+        '--window-size=1900,1080', // указываем размер окна
+        "--disable-gpu",
+         "--headless",
+        "--no-sandbox"
       ],
       
     },
