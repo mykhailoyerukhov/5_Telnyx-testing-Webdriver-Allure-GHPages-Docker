@@ -1,0 +1,36 @@
+name: Run WebDriverIO Tests in Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: docker build -t wdio-tests .
+
+      - name: Run Login Test
+        run: docker run --rm wdio-tests npm run test:login
+
+      - name: Run Sign Up Test
+        run: docker run --rm wdio-tests npm run test:sign_up
+
+      - name: Run Contact Us Test
+        run: docker run --rm wdio-tests npm run test:contact_us
+
+      - name: Run Shop Test
+        run: docker run --rm wdio-tests npm run test:shop
+
+      - name: Run Trust Center Test
+        run: docker run --rm wdio-tests npm run test:trust_center
+
+      - name: Run Main Test
+        run: docker run --rm wdio-tests npm run test:main

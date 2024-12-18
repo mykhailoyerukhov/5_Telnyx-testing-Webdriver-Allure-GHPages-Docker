@@ -2,8 +2,6 @@ import { expect, browser } from '@wdio/globals'
 
 class LoginPage {
 
-    // 1 - Login - Single Sign-On.  2 - Email. 3 - Password. 4 - Forgot your password? 5 - Remember email checkbox 6 - Login Button 7 - Login with Google, Microsoft.
-
     public async open(): Promise<void> {
             const url = 'https://portal.telnyx.com/#/login/sign-in'
             console.log('Navigating to login page')

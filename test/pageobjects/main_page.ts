@@ -2,7 +2,14 @@ import { expect, browser } from '@wdio/globals'
 import { ChainablePromiseElement } from 'webdriverio';
 
 
-// Page.js
+// header: products, solutions, prising, Why Telnyx, Resources; Developers; Shop; Contact Us; Login; Sign Up.
+// footer: Column1: 1 - Our network; 2 - Global coverage; 3 - release notes; 4 - Careers; 5 - Website terms and conditions; 6 - Terms and conditions of service.
+//  Column2: 1 - Data and Privacy; 2 - Report abuse; 3 - Privacy policy; 4 - Cookie policy; 5 - Law enforcement; 6 - Acceptable use; 7 - Trust center.
+// Column3:  1 - Telnyx vs Twilio; 2 - Telnyx vs Bandwidth; 3 - Telnyx vs Kode Wireless; 4 - Telnyx vs Hologram; 5 - Telnyx vs Wasabi; 6 - Telnyx vs Amazon S3; 7 - Voice AI; 8 - AI Glossary.
+// Social media: 1 - LinkedIn; 2 - X.com; 3 - Facebook.
+// Main content: 1 - animation line; 2 - Voice AI  request; 3 - AI demo; 4 - Interactive map; 5 - IoT; 6 - animation line #2; 7 - Explore Dev.docs; 8 - Customers stories; 9 - Learn more; 10 - Connect with us, subscription.
+// header: products, solutions, prising, Why Telnyx, Resources; Developers; Shop; Contact Us; Login; Sign Up.
+
 class MainPageClass {
 
     public async open(): Promise<void> {
@@ -11,15 +18,6 @@ class MainPageClass {
         await browser.url(url);
     }
 
-
-    // header: products, solutions, prising, Why Telnyx, Resources; Developers; Shop; Contact Us; Login; Sign Up.
-    // footer: Column1: 1 - Our network; 2 - Global coverage; 3 - release notes; 4 - Careers; 5 - Website terms and conditions; 6 - Terms and conditions of service.
-    //  Column2: 1 - Data and Privacy; 2 - Report abuse; 3 - Privacy policy; 4 - Cookie policy; 5 - Law enforcement; 6 - Acceptable use; 7 - Trust center.
-    // Column3:  1 - Telnyx vs Twilio; 2 - Telnyx vs Bandwidth; 3 - Telnyx vs Kode Wireless; 4 - Telnyx vs Hologram; 5 - Telnyx vs Wasabi; 6 - Telnyx vs Amazon S3; 7 - Voice AI; 8 - AI Glossary.
-    // Social media: 1 - LinkedIn; 2 - X.com; 3 - Facebook.
-    // Main content: 1 - animation line; 2 - Voice AI  request; 3 - AI demo; 4 - Interactive map; 5 - IoT; 6 - animation line #2; 7 - Explore Dev.docs; 8 - Customers stories; 9 - Learn more; 10 - Connect with us, subscription.
-
-    // header: products, solutions, prising, Why Telnyx, Resources; Developers; Shop; Contact Us; Login; Sign Up.
     get headerProductsMenuItem () {
         return $('[id^="radix"][id$="Rl6jm:"]')
     }
@@ -545,10 +543,6 @@ class MainPageClass {
             }
         })
     }
-
-    
-
-
 
 }
 export default new MainPageClass()
