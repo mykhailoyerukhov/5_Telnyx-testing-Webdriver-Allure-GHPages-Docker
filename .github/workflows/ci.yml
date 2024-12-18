@@ -28,8 +28,23 @@ jobs:
     - name: Install Allure CLI
       run: npm install -g allure-commandline --save-dev
 
-    - name: Run tests
-      run: npm run test
+    - name: Run login tests
+      run: npm run test:login
+
+    - name: Run sign-up tests
+      run: npm run test:sign_up
+
+    - name: Run contact-us tests
+      run: npm run test:contact_us
+
+    - name: Run shop tests
+      run: npm run test:shop
+
+    - name: Run trust-center tests
+      run: npm run test:trust_center
+
+    - name: Run main tests
+      run: npm run test:main
 
     - name: Generate Allure report
       run: npm run allure-generate

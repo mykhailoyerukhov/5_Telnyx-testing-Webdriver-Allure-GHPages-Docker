@@ -93,6 +93,10 @@ CMD ["npm", "run", "test"]
     "deploy:local": "npx gh-pages -d allure-report"
   },
 
+Мой токен в Github:
+
+Запуск Docker: 
+- 
 
 
 
