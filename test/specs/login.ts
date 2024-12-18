@@ -1,6 +1,5 @@
 import { expect, browser } from '@wdio/globals'
 import LoginPage from '@pageobjects/login_page'
-import login_page from '@pageobjects/login_page'
 
 describe('login page', () => {
     beforeEach(() => {

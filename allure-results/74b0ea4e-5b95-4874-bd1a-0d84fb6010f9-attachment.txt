@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//form[@aria-label=\"loginForm\"]//button[@type=\"submit\" and @role=\"button\"]"
+}

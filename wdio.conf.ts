@@ -23,6 +23,7 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
+        './test/specs/**/*.ts'
         // ToDo: define location for spec files here
     ],
     // Patterns to exclude.
@@ -52,10 +53,16 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
-    }, {
-        browserName: 'firefox'
-    }],
+        browserName: process.argv.includes('--browser-name=firefox') ? 'firefox' : 
+        process.argv.includes('--browser-name=chrome') ? 'chrome' : 'chrome',
+        'goog:chromeOptions': {
+      args: [
+        '--window-size=1900,1080' // указываем размер окна
+      ],
+      
+    },
+        acceptInsecureCerts: true // Default chrome
+    }, ],
 
     //
     // ===================
