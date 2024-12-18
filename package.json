@@ -1,0 +1,42 @@
+{
+  "name": "telnyx_tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio run ./wdio.conf.ts",
+    "test_single_file": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts",
+    "test:login": "wdio run ./wdio.conf.ts --spec ./test/specs/login.ts",
+    "test:job_application": "wdio run ./wdio.conf.ts --spec ./test/specs/job_application.ts",
+    "test:contact_us": "wdio run ./wdio.conf.ts --spec ./test/specs/contact_us.ts",
+    "test:trust_center": "wdio run ./wdio.conf.ts --spec ./test/specs/trust_center.ts", 
+    "test:sign_up": "wdio run ./wdio.conf.ts --spec ./test/specs/sign_up.ts",
+    "test:shop": "wdio run ./wdio.conf.ts --spec ./test/specs/shop.ts",
+
+    "test_all_in_chrome": "wdio run ./wdio.conf.ts -- --browser-name=chrome",
+    "test_all_in_firefox": "wdio run ./wdio.conf.ts -- --browser-name=firefox",
+
+    "allure:generate": "allure generate ./allure-results --clean",
+    "allure:open": "allure open",
+    "clean:allure-windows": "rmdir /s /q allure-results && rmdir /s /q allure-report",
+    "clean:allure": "rm -rf allure-results allure-report || true",
+    
+    
+    "deploy:local": "npx gh-pages -d allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.4.3",
+    "@wdio/cli": "^9.4.3",
+    "@wdio/local-runner": "^9.4.3",
+    "@wdio/mocha-framework": "^9.4.3",
+    "@wdio/spec-reporter": "^9.4.3",
+    "@wdio/visual-service": "^6.2.5",
+    "mocha": "^11.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "webdriverio": "^9.4.3"
+  }
+}
