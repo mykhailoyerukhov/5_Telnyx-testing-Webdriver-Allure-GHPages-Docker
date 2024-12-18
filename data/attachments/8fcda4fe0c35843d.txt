@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//h2[@class=\"cart__empty-text\"]\"}\n  (Session info: chrome=131.0.6778.139)",
+  "stacktrace": "#0 0x55f7cf01543a <unknown>\n#1 0x55f7ceb2aa70 <unknown>\n#2 0x55f7ceb79786 <unknown>\n#3 0x55f7ceb79a21 <unknown>\n#4 0x55f7cebbeeb4 <unknown>\n#5 0x55f7ceb9d82d <unknown>\n#6 0x55f7cebbc277 <unknown>\n#7 0x55f7ceb9d5a3 <unknown>\n#8 0x55f7ceb6c01d <unknown>\n#9 0x55f7ceb6d03e <unknown>\n#10 0x55f7cefe27bb <unknown>\n#11 0x55f7cefe6742 <unknown>\n#12 0x55f7cefcf61c <unknown>\n#13 0x55f7cefe72a7 <unknown>\n#14 0x55f7cefb4e1f <unknown>\n#15 0x55f7cf004468 <unknown>\n#16 0x55f7cf004630 <unknown>\n#17 0x55f7cf0142b6 <unknown>\n#18 0x7efe75894ac3 <unknown>\n"
+}
