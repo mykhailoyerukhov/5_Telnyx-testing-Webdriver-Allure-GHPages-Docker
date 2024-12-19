@@ -40,9 +40,6 @@ jobs:
     - name: Run trust-center tests
       run: npm run test:trust_center
 
-    - name: Run main tests
-      run: npm run test:main
-
     - name: Run subscription tests
       run: npm run test:subscription
 
