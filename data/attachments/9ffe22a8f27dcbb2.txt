@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//div[@id=\"ValidMsgReason_for_Contact__c\"]"
-}

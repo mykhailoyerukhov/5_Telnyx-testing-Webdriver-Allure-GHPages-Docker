@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//li/a[@href=\"https://www.linkedin.com/company/telnyx/\"]"
-}

@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//input[@id=\"terms_and_conditions\"]"
-}
