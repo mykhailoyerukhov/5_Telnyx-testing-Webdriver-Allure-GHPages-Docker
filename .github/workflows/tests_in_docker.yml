@@ -26,11 +26,26 @@ jobs:
       - name: Run Contact Us Test
         run: docker run --rm wdio-tests npm run test:contact_us
 
-      - name: Run Shop Test
-        run: docker run --rm wdio-tests npm run test:shop
-
       - name: Run Trust Center Test
         run: docker run --rm wdio-tests npm run test:trust_center
 
       - name: Run Main Test
         run: docker run --rm wdio-tests npm run test:main
+
+      - name: Run Subscription Test
+        run: docker run --rm wdio-tests npm run test:subscription
+
+      - name: Run Support_center Test
+        run: docker run --rm wdio-tests npm run test:support_center
+
+      - name: Run Marketplace Test
+        run: docker run --rm wdio-tests npm run test:marketplace
+
+      - name: Run Developers Test
+        run: docker run --rm wdio-tests npm run test:developers
+
+      - name: Run Login Test (Firefox)
+        run: docker run --rm wdio-tests npm run test:login-firefox
+
+      - name: Run Shop Test
+        run: docker run --rm wdio-tests npm run test:shop

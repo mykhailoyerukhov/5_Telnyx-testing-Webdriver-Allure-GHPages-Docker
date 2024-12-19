@@ -52,20 +52,35 @@ export const config: WebdriverIO.Config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: process.argv.includes('--browser-name=firefox') ? 'firefox' : 
-        process.argv.includes('--browser-name=chrome') ? 'chrome' : 'chrome',
-        'goog:chromeOptions': {
-      args: [
-        '--window-size=1900,1080', // указываем размер окна
-        "--disable-gpu",
-         "--headless",
-        "--no-sandbox"
-      ],
+    capabilities: [
+        {
+          browserName: process.argv.includes('--browser-name=firefox') ? 'firefox' : 
+          process.argv.includes('--browser-name=chrome') ? 'chrome' : 'chrome',
+          
+          //  Chrome
+          'goog:chromeOptions': {
+            args: [
+              '--window-size=1900,1080',
+              "--disable-gpu",
+              // "--headless",
+              "--no-sandbox"
+            ],
+          },
+          
+          //  Firefox
+          'moz:firefoxOptions': {
+            args: [
+              '--width=1900',            
+              '--height=1080',           
+              '-headless',               
+              '--no-sandbox',           
+              '--disable-gpu',          
+            ]
+          },
       
-    },
-        acceptInsecureCerts: true // Default chrome
-    }, ],
+          acceptInsecureCerts: true, 
+        },
+      ],
 
     //
     // ===================
@@ -145,6 +160,7 @@ export const config: WebdriverIO.Config = {
         ui: 'bdd',
         timeout: 120000
     },
+
 
     //
     // =====

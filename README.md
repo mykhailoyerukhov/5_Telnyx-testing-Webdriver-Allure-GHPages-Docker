@@ -1,12 +1,12 @@
 
-# Установить зависимости
+# Install dependencies
 1 npm install --save-dev webdriverio @wdio/cli @wdio/mocha-framework @wdio/allure-reporter mocha ts-node typescript
 
-# Настроить webdriver
+# Configure Webdriver.IO
 npx wdio config
-# Установить typescript , mocha, allure-report
+# Install typescript , mocha, allure-report
 
-## В конфиге wdio.conf.ts:
+## In config е wdio.conf.ts:
     reporters: [['allure', {outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
@@ -31,7 +31,7 @@ npx wdio config
         './test/specs/**/*.ts'
     ],
 
-## А также wdio.conf.ts:
+## And also wdio.conf.ts:
     tsConfigPath: './tsconfig.json',
 
         mochaOpts: {
@@ -41,21 +41,24 @@ npx wdio config
 
     (Поставил 120 сек вместо 60 сек.)
 
-### Создал папки:
+### Folders created:
 test -> 1. pageobjects 2. specs
 .github -> 1. workflows
-Используя относительные пути в tsconfig.json названия папок должны совпадать.
+By using relative paths in tsconfig.json names of folders should match each other!
 
-### Добавил относительные пути в tsconfig.json
+### Added relative paths to tsconfig.json
 "baseUrl": "./",
         "paths": {
           "@pageobjects/*": ["test/pageobjects/*"],
           "@specs/*": ["test/specs/*"]
         }
 
-### Создал .gitignore /node_modules
+### Created .gitignore 
+/node_modules
+allure-results/
+allure-report/
 
-## Создал Dockerfile
+## Created Dockerfile
 FROM node:18
 
 WORKDIR /app
@@ -70,21 +73,18 @@ RUN npm run clean:allure
 
 CMD ["npm", "run", "test"]
 
-## Запуск Docker: 
-- (Локально) 
-Собрать образ:
+## Run Docker: 
+- (Locally) 
+Create image:
 docker build -t mike01 .
-Запуск контейнера:
+Run container:
 docker run mike01 npm run test:login
 docker run mike01 npm run test:sign_up
-docker run mike01 npm run test:contact_us
-docker run mike01 npm run test:shop
-docker run mike01 npm run test:trust_center
-docker run mike01 npm run test:main
+...
 
 docker run -p 38999:38999 mike01 npm run test:login
 
-- Установлены библиотеки
+- Libs installed
 RUN apt-get update && apt-get install -y \
   libnss3 \
   libgdk-pixbuf2.0-0 \
@@ -103,13 +103,13 @@ RUN apt-get update && apt-get install -y \
   libxtst6 \
   libnss3-dev
 
-- wdio.conf.ts. Внимание на headless mode.
+- wdio.conf.ts. (Without headless mode i got failed) .
 capabilities: [{
         browserName: process.argv.includes('--browser-name=firefox') ? 'firefox' : 
         process.argv.includes('--browser-name=chrome') ? 'chrome' : 'chrome',
         'goog:chromeOptions': {
       args: [
-        '--window-size=1900,1080', // указываем размер окна
+        '--window-size=1900,1080', // selecting window size
         "--disable-gpu",
          "--headless",
         "--no-sandbox"
@@ -119,41 +119,36 @@ capabilities: [{
         acceptInsecureCerts: true // Default chrome
     }, ],
 
-- Была проблема с chromedriver. До конца не ясно как она устранилась. Вероятно, после того, как я скачал chromedriver 
-с сайта https://googlechromelabs.github.io/chrome-for-testing/#stable
+- There was a problem with chromedriver.Still not clear how it have fixed. Probably, after I downloaded  chromedriver from website https://googlechromelabs.github.io/chrome-for-testing/#stable
 
-## Создать workflow file ci.yml
+## Created workflow file ci.yml
 
-## Установил chromedriver
-npm install --save-dev chromedriver
+### Added scripts:
 
-"webdriverio": "^9.4.3"
-
-
-Изменил wdio.conf.ts
-
-  services: ['visual', 'chromedriver'],
-### Добавил скрипты:
-
- "scripts": {
-    "test": "wdio run ./wdio.conf.ts",
-    "test_single_file": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts",
+"scripts": {
+    "test:all": "wdio run ./wdio.conf.ts",
     "test:login": "wdio run ./wdio.conf.ts --spec ./test/specs/login.ts",
-    "test:job_application": "wdio run ./wdio.conf.ts --spec ./test/specs/job_application.ts",
-    "test:contact_us": "wdio run ./wdio.conf.ts --spec ./test/specs/contact_us.ts",
-    "test:trust_center": "wdio run ./wdio.conf.ts --spec ./test/specs/trust_center.ts", 
     "test:sign_up": "wdio run ./wdio.conf.ts --spec ./test/specs/sign_up.ts",
+    "test:contact_us": "wdio run ./wdio.conf.ts --spec ./test/specs/contact_us.ts",
     "test:shop": "wdio run ./wdio.conf.ts --spec ./test/specs/shop.ts",
+    "test:trust_center": "wdio run ./wdio.conf.ts --spec ./test/specs/trust_center.ts",
+    "test:main": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts",
 
-    "test_all_in_chrome": "wdio run ./wdio.conf.ts -- --browser-name=chrome",
-    "test_all_in_firefox": "wdio run ./wdio.conf.ts -- --browser-name=firefox",
+    "test:all_in_chrome": "wdio run ./wdio.conf.ts -- --browser-name=chrome",
+    "test:all_in_firefox": "wdio run ./wdio.conf.ts -- --browser-name=firefox",
+
+    "test:login-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/login.ts -- --browser-name=firefox",
+    "test:sign_up-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/sign_up.ts --browser-name=firefox",
+    "test:contact_us-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/contact_us.ts --browser-name=firefox",
+    "test:shop-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/shop.ts --browser-name=firefox",
+    "test:trust_center-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/trust_center.ts --browser-name=firefox",
+    "test:main-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts --browser-name=firefox",
 
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open",
     "clean:allure-windows": "rmdir /s /q allure-results && rmdir /s /q allure-report",
-    "clean:allure": "rm -rf allure-results allure-report || true",
-    
-    
+    "clean:allure": "rm -rf allure-results allure-report",
+
     "deploy:local": "npx gh-pages -d allure-report"
   },
 

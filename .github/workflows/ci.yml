@@ -37,14 +37,29 @@ jobs:
     - name: Run contact-us tests
       run: npm run test:contact_us
 
-    - name: Run shop tests
-      run: npm run test:shop
-
     - name: Run trust-center tests
       run: npm run test:trust_center
 
     - name: Run main tests
       run: npm run test:main
+
+    - name: Run subscription tests
+      run: npm run test:subscription
+
+    - name: Run support_center tests
+      run: npm run test:support_center
+
+    - name: Run marketplace tests
+      run: npm run test:marketplace
+
+    - name: Run developers tests
+      run: npm run test:developers
+
+    - name: Run login test (firefox)
+      run: npm run test:login-firefox
+
+    - name: Run shop tests
+      run: npm run test:shop
 
     - name: Generate Allure report
       run: npm run allure:generate

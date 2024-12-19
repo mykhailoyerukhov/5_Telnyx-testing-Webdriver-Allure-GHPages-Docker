@@ -33,5 +33,6 @@
         "test",
         "wdio.conf.ts",
          "test/**/*.ts"
-    ]
+    ],
+    "exclude": ["node_modules", "dist"]
 }

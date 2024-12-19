@@ -3,28 +3,46 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./wdio.conf.ts",
+    "test:all": "wdio run ./wdio.conf.ts",
     "test:login": "wdio run ./wdio.conf.ts --spec ./test/specs/login.ts",
     "test:sign_up": "wdio run ./wdio.conf.ts --spec ./test/specs/sign_up.ts",
     "test:contact_us": "wdio run ./wdio.conf.ts --spec ./test/specs/contact_us.ts",
     "test:shop": "wdio run ./wdio.conf.ts --spec ./test/specs/shop.ts",
     "test:trust_center": "wdio run ./wdio.conf.ts --spec ./test/specs/trust_center.ts",
     "test:main": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts",
-    "test_all_in_chrome": "wdio run ./wdio.conf.ts -- --browser-name=chrome",
-    "test_all_in_firefox": "wdio run ./wdio.conf.ts -- --browser-name=firefox",
+    "test:subscription": "wdio run ./wdio.conf.ts --spec ./test/specs/subscription.ts",
+    "test:support_center": "wdio run ./wdio.conf.ts --spec ./test/specs/support_center.ts",
+    "test:marketplace": "wdio run ./wdio.conf.ts --spec ./test/specs/marketplace.ts",
+    "test:developers": "wdio run ./wdio.conf.ts --spec ./test/specs/developers.ts",
+
+    "test:all_in_chrome": "wdio run ./wdio.conf.ts -- --browser-name=chrome",
+    "test:all_in_firefox": "wdio run ./wdio.conf.ts -- --browser-name=firefox",
+
+    "test:login-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/login.ts -- --browser-name=firefox",
+    "test:sign_up-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/sign_up.ts --browser-name=firefox",
+    "test:contact_us-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/contact_us.ts --browser-name=firefox",
+    "test:shop-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/shop.ts --browser-name=firefox",
+    "test:trust_center-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/trust_center.ts --browser-name=firefox",
+    "test:main-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts --browser-name=firefox",
+    "test:subscription-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts --browser-name=firefox",
+    "test:support_center-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/support_center.ts --browser-name=firefox",
+    "test:marketplace-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/marketplace.ts --browser-name=firefox",
+    "test:developers-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/developers.ts -browser-name=firefox",
+
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open",
     "clean:allure-windows": "rmdir /s /q allure-results && rmdir /s /q allure-report",
-    "clean:allure": "rm -rf allure-results allure-report || true",
+    "clean:allure": "rm -rf allure-results allure-report",
+
     "deploy:local": "npx gh-pages -d allure-report"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mike",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@wdio/allure-reporter": "^9.4.3",
-    "@wdio/cli": "^9.4.3",
+    "@wdio/allure-reporter": "^9.4.4",
+    "@wdio/cli": "^9.4.5",
     "@wdio/local-runner": "^9.4.3",
     "@wdio/mocha-framework": "^9.4.3",
     "@wdio/spec-reporter": "^9.4.3",
@@ -33,5 +51,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "webdriverio": "^9.4.3"
+  },
+  "dependencies": {
+    "@wdio/protocols": "^9.4.4",
+    "@wdio/types": "^9.4.4"
   }
 }
