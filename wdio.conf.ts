@@ -62,7 +62,7 @@ export const config: WebdriverIO.Config = {
             args: [
               '--window-size=1900,1080',
               "--disable-gpu",
-              // "--headless",
+              "--headless",
               "--no-sandbox"
             ],
           },
