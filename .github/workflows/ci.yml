@@ -55,6 +55,9 @@ jobs:
     - name: Run developers tests
       run: npm run test:developers
 
+    - name: Run social_media tests
+      run: npm run test:social_media
+
     - name: Run login test (firefox)
       run: npm run test:login-firefox
 

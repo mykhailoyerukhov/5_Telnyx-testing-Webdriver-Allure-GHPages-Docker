@@ -14,6 +14,7 @@
     "test:support_center": "wdio run ./wdio.conf.ts --spec ./test/specs/support_center.ts",
     "test:marketplace": "wdio run ./wdio.conf.ts --spec ./test/specs/marketplace.ts",
     "test:developers": "wdio run ./wdio.conf.ts --spec ./test/specs/developers.ts",
+    "test:social_media": "wdio run ./wdio.conf.ts --spec ./test/specs/social_media.ts",
 
     "test:all_in_chrome": "wdio run ./wdio.conf.ts -- --browser-name=chrome",
     "test:all_in_firefox": "wdio run ./wdio.conf.ts -- --browser-name=firefox",
@@ -27,7 +28,8 @@
     "test:subscription-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/main.ts --browser-name=firefox",
     "test:support_center-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/support_center.ts --browser-name=firefox",
     "test:marketplace-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/marketplace.ts --browser-name=firefox",
-    "test:developers-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/developers.ts -browser-name=firefox",
+    "test:developers-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/developers.ts --browser-name=firefox",
+    "test:social_media-firefox": "wdio run ./wdio.conf.ts --spec ./test/specs/social_media.ts --browser-name=firefox",
 
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open",

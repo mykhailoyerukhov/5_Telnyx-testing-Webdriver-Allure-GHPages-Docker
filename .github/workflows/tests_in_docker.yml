@@ -29,9 +29,6 @@ jobs:
       - name: Run Trust Center Test
         run: docker run --rm wdio-tests npm run test:trust_center
 
-      - name: Run Main Test
-        run: docker run --rm wdio-tests npm run test:main
-
       - name: Run Subscription Test
         run: docker run --rm wdio-tests npm run test:subscription
 
@@ -43,6 +40,9 @@ jobs:
 
       - name: Run Developers Test
         run: docker run --rm wdio-tests npm run test:developers
+
+      - name: Run Social Media Test
+        run: docker run --rm wdio-tests npm run test:social_media
 
       - name: Run Login Test (Firefox)
         run: docker run --rm wdio-tests npm run test:login-firefox
