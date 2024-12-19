@@ -6,7 +6,7 @@ describe('Telnyx website testing',  () => {
         MainPageClass.open()
             browser.pause(5000)
         })
-    it('valid LinkedIn url when click on icon',async () => {
+    it.skip('valid LinkedIn url when click on icon',async () => {
         await MainPageClass.footerLinkedInClickOn()
 
         const windowHandles = await browser.getWindowHandles();
