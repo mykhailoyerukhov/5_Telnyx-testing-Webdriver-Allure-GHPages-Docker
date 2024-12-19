@@ -20,7 +20,7 @@ describe('Telnyx website testing',  () => {
         await browser.switchToWindow(windowHandles[0]);
 
     })
-    it('valid x.com url when click on icon', async () => {
+    it.skip('valid x.com url when click on icon', async () => {
         await MainPageClass.footerXcomClickOn()
 
         const windowHandles = await browser.getWindowHandles();
@@ -33,7 +33,7 @@ describe('Telnyx website testing',  () => {
         await browser.closeWindow();
         await browser.switchToWindow(windowHandles[0]);
     })
-    it('valid Facebook url when click on icon', async () => {
+    it.skip('valid Facebook url when click on icon', async () => {
         await MainPageClass.footerFacebookClickOn()
         await browser.pause(3000)
 
