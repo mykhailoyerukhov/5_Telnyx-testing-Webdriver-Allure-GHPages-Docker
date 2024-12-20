@@ -1,0 +1,41 @@
+name: run some single test manually
+
+on:
+  
+  push:
+    branches:
+      - main
+    pull_request:
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+      
+      - name: Install dependencies
+        uses: npm ci
+            
+      - name: Install Chromium
+        run: sudo apt-get install -y chromium-browser
+      
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline --save-dev
+      
+      - name: run one test - login
+        run: npm run test:login
+      
+      - name: Generate Allure report
+        run: npm run allure:generate
+      
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./allure-report

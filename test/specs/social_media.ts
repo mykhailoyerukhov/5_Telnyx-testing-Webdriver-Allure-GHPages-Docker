@@ -1,7 +1,7 @@
 import MainPageClass from '@pageobjects/main_page';
 import SignUpClass from '@pageobjects/sign_up_page'
 
-describe.skip('Telnyx website testing',  () => {
+describe('npm run test:social_media',  () => {
     beforeEach(() => {
         MainPageClass.open()
             browser.pause(5000)

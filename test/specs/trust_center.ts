@@ -1,11 +1,11 @@
 import TrustCenterClass from '@pageobjects/trust_center_page'
 
-describe('trust_center', () => {
+describe.skip('trust_center', () => {
     beforeEach(() => {
         TrustCenterClass.open()
         browser.pause(3000)
         })
-    it.skip('submit with empty fields. "Send Request" button is disabled', async () => {
+    it('submit with empty fields. "Send Request" button is disabled', async () => {
 
         await TrustCenterClass.ClickOnsoc2type1()
 
@@ -13,7 +13,7 @@ describe('trust_center', () => {
 
         await expect(TrustCenterClass.sendRequestButton).not.toBeClickable()
     })
-    it.skip('submit with invalid data. Checkbox "Accept terms" is disabled', async () => {
+    it('submit with invalid data. Checkbox "Accept terms" is disabled', async () => {
         
         await TrustCenterClass.ClickOnsoc2type1()
 
@@ -29,7 +29,7 @@ describe('trust_center', () => {
         await expect(TrustCenterClass.warningEmail).toHaveText('Work Email must be a valid email')
 
     })
-    it.skip('submit with valid data. Submit is successful', async () => {
+    it('submit with valid data. Submit is successful', async () => {
 
         await TrustCenterClass.ClickOnsoc2type1()
         await TrustCenterClass.ClickOnContinue()
