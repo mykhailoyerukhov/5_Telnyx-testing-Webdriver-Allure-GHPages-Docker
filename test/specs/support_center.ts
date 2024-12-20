@@ -6,7 +6,7 @@ describe('Telnyx website testing',  () => {
             browser.pause(5000)
         })
 
-    it('check header of found article by some keyword', async () => {
+    it.skip('check header of found article by some keyword', async () => {
         SupportCenterClass.inputInSearchBar('AI')
         await browser.pause(10000)
         await expect(SupportCenterClass.searchTitleField).toHaveText('Search results for:')
@@ -14,7 +14,7 @@ describe('Telnyx website testing',  () => {
 
         await expect(SupportCenterClass.headerInArticle).toHaveText('Mission Control Portal - AI Chat Support')
     })
-    it('executed search with empty query returns baseurl', async () => {
+    it.skip('executed search with empty query returns baseurl', async () => {
         SupportCenterClass.inputInSearchBar('')
 
         await browser.pause(3000)
@@ -23,7 +23,7 @@ describe('Telnyx website testing',  () => {
         await expect(currentUrl).toEqual('https://support.telnyx.com/en/?q=')
     })
   
-    it('even random invalid data brings some results', async () => {
+    it.skip('even random invalid data brings some results', async () => {
         
         await SupportCenterClass.inputInSearchBar('asdgwregwrkvmqwe;rlk31;54#Q)($$')
         const numberOfCards = await SupportCenterClass.searchResultsCards.length

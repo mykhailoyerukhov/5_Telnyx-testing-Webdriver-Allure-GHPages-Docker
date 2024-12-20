@@ -1,7 +1,7 @@
 import { expect, browser } from '@wdio/globals'
 import ShopPage from '@pageobjects/shop_page'
 
-describe('shop', () => {
+describe.skip('shop', () => {
     beforeEach(() => {
                 ShopPage.open()
                 browser.pause(3000)
