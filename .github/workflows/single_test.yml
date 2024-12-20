@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
       
       - name: Install dependencies
-        uses: npm ci
+        run: npm ci
             
       - name: Install Chromium
         run: sudo apt-get install -y chromium-browser
