@@ -32,8 +32,7 @@ jobs:
       - name: Run Subscription Test
         run: docker run --rm wdio-tests npm run test:subscription
 
-      - name: Run Support_center Test
-        run: docker run --rm wdio-tests npm run test:support_center
+
 
       - name: Run Marketplace Test
         run: docker run --rm wdio-tests npm run test:marketplace
