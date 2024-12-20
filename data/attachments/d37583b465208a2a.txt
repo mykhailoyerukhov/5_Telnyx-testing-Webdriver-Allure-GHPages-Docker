@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//h2[@class=\"cart__empty-text\"]"
-}
