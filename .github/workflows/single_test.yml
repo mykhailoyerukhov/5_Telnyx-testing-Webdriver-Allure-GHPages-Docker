@@ -1,11 +1,12 @@
 name: run some single test manually
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
-  workflow_dispatch:
+  
 
 jobs:
   test:
