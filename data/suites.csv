@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","11019","submit with empty fields","","Fri Dec 20 12:36:52 UTC 2024","passed","Fri Dec 20 12:37:03 UTC 2024","","login page","",""
-"","1003","submit with valid data","","Fri Dec 20 12:37:06 UTC 2024","passed","Fri Dec 20 12:37:07 UTC 2024","","login page","",""
-"","3004","submit with invalid data","","Fri Dec 20 12:37:03 UTC 2024","passed","Fri Dec 20 12:37:06 UTC 2024","","login page","",""
+"","1004","submit with valid data","","Fri Dec 20 12:45:56 UTC 2024","passed","Fri Dec 20 12:45:57 UTC 2024","","login page","",""
+"","6334","submit with empty fields","","Fri Dec 20 12:45:47 UTC 2024","passed","Fri Dec 20 12:45:53 UTC 2024","","login page","",""
+"","3005","submit with invalid data","","Fri Dec 20 12:45:53 UTC 2024","passed","Fri Dec 20 12:45:56 UTC 2024","","login page","",""
