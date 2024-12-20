@@ -1,3 +1,0 @@
-{
-  "text": "CoRREcT123Password!"
-}
