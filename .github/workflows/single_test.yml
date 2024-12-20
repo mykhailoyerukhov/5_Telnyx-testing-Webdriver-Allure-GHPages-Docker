@@ -1,15 +1,14 @@
 name: run some single test manually
 
 on:
-  
   push:
     branches:
       - main
-    pull_request:
+  pull_request:
   workflow_dispatch:
 
 jobs:
-  run-tests:
+  test:
     runs-on: ubuntu-latest
 
     steps:
