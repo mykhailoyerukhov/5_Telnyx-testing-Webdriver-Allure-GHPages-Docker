@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//button[@type=\"submit\" and contains(@class, \"c-ddSKil\")]"
-}

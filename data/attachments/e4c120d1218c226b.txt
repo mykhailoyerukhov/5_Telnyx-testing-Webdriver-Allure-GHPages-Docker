@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: element not found\n  (Session info: chrome=131.0.6778.139)",
-  "stacktrace": "#0 0x561c8e90543a <unknown>\n#1 0x561c8e41aa70 <unknown>\n#2 0x561c8e42c33b <unknown>\n#3 0x561c8e42b0b5 <unknown>\n#4 0x561c8e4210a9 <unknown>\n#5 0x561c8e41f400 <unknown>\n#6 0x561c8e422cd8 <unknown>\n#7 0x561c8e422d63 <unknown>\n#8 0x561c8e464e26 <unknown>\n#9 0x561c8e48d802 <unknown>\n#10 0x561c8e45ddb8 <unknown>\n#11 0x561c8e48d9ce <unknown>\n#12 0x561c8e4ac277 <unknown>\n#13 0x561c8e48d5a3 <unknown>\n#14 0x561c8e45c01d <unknown>\n#15 0x561c8e45d03e <unknown>\n#16 0x561c8e8d27bb <unknown>\n#17 0x561c8e8d6742 <unknown>\n#18 0x561c8e8bf61c <unknown>\n#19 0x561c8e8d72a7 <unknown>\n#20 0x561c8e8a4e1f <unknown>\n#21 0x561c8e8f4468 <unknown>\n#22 0x561c8e8f4630 <unknown>\n#23 0x561c8e9042b6 <unknown>\n#24 0x7ff1ce894ac3 <unknown>\n"
-}
