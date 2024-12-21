@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "(//button[contains(@class, \"c-fOQMKa\") and contains(text(), \"\")]/span[@class=\"c-hakyQ\"])[3]"
+}

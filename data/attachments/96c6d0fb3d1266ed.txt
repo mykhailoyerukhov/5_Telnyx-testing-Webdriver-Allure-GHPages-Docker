@@ -1,0 +1,3 @@
+{
+  "text": "some_valid@email.com"
+}
