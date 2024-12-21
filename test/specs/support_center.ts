@@ -21,7 +21,9 @@ describe('Telnyx website testing',  () => {
         await browser.pause(1000)
 
         const currentUrl = await browser.getUrl()
-        await expect(currentUrl).toEqual('https://support.telnyx.com/en/')
+        await expect(currentUrl === 'https://support.telnyx.com/en/' ||
+            currentUrl ==='https://support.telnyx.com/en/?q='
+        ).toEqual('https://support.telnyx.com/en/')
         await browser.pause(1000)
     })
   
