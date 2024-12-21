@@ -1,6 +1,6 @@
 import TrustCenterClass from '@pageobjects/trust_center_page'
 
-describe.skip('trust_center', () => {
+describe('trust_center', () => {
     beforeEach(() => {
         TrustCenterClass.open()
         browser.pause(3000)

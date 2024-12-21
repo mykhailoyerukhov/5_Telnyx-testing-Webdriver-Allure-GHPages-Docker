@@ -1,6 +1,6 @@
 import SupportCenterClass from '@pageobjects/support_center_class';
 
-describe.skip('Telnyx website testing',  () => {
+describe('Telnyx website testing',  () => {
     beforeEach(() => {
         SupportCenterClass.open()
             browser.pause(5000)

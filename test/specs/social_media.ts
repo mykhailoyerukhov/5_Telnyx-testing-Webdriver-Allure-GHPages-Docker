@@ -23,7 +23,7 @@ describe('npm run test:social_media',  () => {
         await browser.switchToWindow(windowHandles[0]);
 
     })
-    it.skip('valid x.com url when click on icon', async () => {
+    it('valid x.com url when click on icon', async () => {
         await MainPageClass.footerXcomClickOn()
 
         const windowHandles = await browser.getWindowHandles();
@@ -36,7 +36,7 @@ describe('npm run test:social_media',  () => {
         await browser.closeWindow();
         await browser.switchToWindow(windowHandles[0]);
     })
-    it.skip('valid Facebook url when click on icon', async () => {
+    it('valid Facebook url when click on icon', async () => {
         await MainPageClass.footerFacebookClickOn()
         await browser.pause(3000)
 

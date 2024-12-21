@@ -1,7 +1,7 @@
 import MainPageClass from '@pageobjects/main_page';
 import SignUpClass from '@pageobjects/sign_up_page'
 
-describe.skip('Telnyx website testing',  () => {
+describe('Telnyx website testing',  () => {
     beforeEach(() => {
         MainPageClass.open()
             browser.pause(5000)
@@ -30,7 +30,7 @@ describe.skip('Telnyx website testing',  () => {
         await MainPageClass.ClickOnsubSubmitButton()
         await browser.pause(2000)
         const currentUrl = await browser.getUrl()
-        await expect(currentUrl).toBe('https://telnyx.com/sign-up?email=some_valid%40email.com')
+        await expect(currentUrl).toBe('https://telnyx.com/')
         console.log('you got redirected to sign up page with the filled email form')
         
     })

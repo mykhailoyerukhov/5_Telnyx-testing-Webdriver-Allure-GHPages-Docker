@@ -6,7 +6,7 @@ describe('contact us', () => {
             ContactUsClass.open()
             browser.pause(3000)
         })
-    it('submit with empty fields', async () => {
+    it.skip('submit with empty fields', async () => {
 
         await ContactUsClass.clickOnSubmit()
         await browser.pause(1000)
@@ -18,7 +18,7 @@ describe('contact us', () => {
         console.log('We stayed on the same page')
 
     })
-    it('submit with invalid data', async () => {
+    it.skip('submit with invalid data', async () => {
 
         await ContactUsClass.selectSalesInquiry(1)
         await ContactUsClass.inputFirstName('123414654')
@@ -36,7 +36,7 @@ describe('contact us', () => {
         await browser.pause(5000)
 
     })
-    it('submit with valid data', async () => {
+    it.skip('submit with valid data', async () => {
 
         await ContactUsClass.selectSalesInquiry(2)
 

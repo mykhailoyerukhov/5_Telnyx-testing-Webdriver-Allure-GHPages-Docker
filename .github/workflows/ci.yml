@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Tests
 
 on:
   workflow_dispatch:
@@ -47,7 +47,8 @@ jobs:
     - name: Run support_center tests
       run: npm run test:support_center
 
-    
+    - name: Run marketplace tests
+      run: npm run test:marketplace
 
     - name: Run developers tests
       run: npm run test:developers
