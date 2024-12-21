@@ -23,7 +23,7 @@ describe('Telnyx website testing',  () => {
         const currentUrl = await browser.getUrl()
         await expect(currentUrl === 'https://support.telnyx.com/en/' ||
             currentUrl ==='https://support.telnyx.com/en/?q='
-        ).toEqual('https://support.telnyx.com/en/')
+        ).toBeTruthy()
         await browser.pause(1000)
     })
   
