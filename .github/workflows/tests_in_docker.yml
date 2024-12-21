@@ -1,6 +1,7 @@
 name: Run WebDriverIO Tests in Docker
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main

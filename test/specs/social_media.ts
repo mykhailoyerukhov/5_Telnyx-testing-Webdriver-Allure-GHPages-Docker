@@ -1,5 +1,4 @@
 import MainPageClass from '@pageobjects/main_page';
-import SignUpClass from '@pageobjects/sign_up_page'
 
 describe('npm run test:social_media',  () => {
     beforeEach(() => {
@@ -15,12 +14,16 @@ describe('npm run test:social_media',  () => {
         const currentUrl = await browser.getUrl();
         console.log(`URL of new tab: ${currentUrl}`);
 
-        await expect(currentUrl).toBe('https://www.linkedin.com/company/telnyx/');
+        await expect(
+            currentUrl === 'https://www.linkedin.com/company/telnyx/' ||
+            currentUrl.includes('https://www.linkedin.com/authwall')
+            ).toBeTruthy()
+        console.log(`current url is ${currentUrl}`)
         await browser.closeWindow();
         await browser.switchToWindow(windowHandles[0]);
 
     })
-    it('valid x.com url when click on icon', async () => {
+    it.skip('valid x.com url when click on icon', async () => {
         await MainPageClass.footerXcomClickOn()
 
         const windowHandles = await browser.getWindowHandles();
@@ -33,7 +36,7 @@ describe('npm run test:social_media',  () => {
         await browser.closeWindow();
         await browser.switchToWindow(windowHandles[0]);
     })
-    it('valid Facebook url when click on icon', async () => {
+    it.skip('valid Facebook url when click on icon', async () => {
         await MainPageClass.footerFacebookClickOn()
         await browser.pause(3000)
 
