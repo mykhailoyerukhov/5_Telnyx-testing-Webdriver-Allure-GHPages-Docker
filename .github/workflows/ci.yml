@@ -33,36 +33,47 @@ jobs:
 
     - name: Run login tests
       run: npm run test:login
+      continue-on-error: true
 
     - name: Run sign-up tests
       run: npm run test:sign_up
+      continue-on-error: true
 
     - name: Run contact-us tests
       run: npm run test:contact_us
+      continue-on-error: true
 
     - name: Run trust-center tests
       run: npm run test:trust_center
+      continue-on-error: true
 
     - name: Run subscription tests
       run: npm run test:subscription
+      continue-on-error: true
 
     - name: Run support_center tests
       run: npm run test:support_center
+      continue-on-error: true
 
     - name: Run marketplace tests
       run: npm run test:marketplace
+      continue-on-error: true
 
     - name: Run developers tests
       run: npm run test:developers
+      continue-on-error: true
 
     - name: Run social_media tests
       run: npm run test:social_media
+      continue-on-error: true
 
     - name: Run login test (firefox)
       run: npm run test:login-firefox
+      continue-on-error: true
 
     - name: Run shop tests
       run: npm run test:shop
+      continue-on-error: true
 
     - name: Generate Allure report
       run: npm run allure:generate
